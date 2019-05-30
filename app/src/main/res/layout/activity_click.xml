@@ -8,11 +8,11 @@
 
     <TextView
         android:id="@+id/title_overview"
-        android:text="Summary"
+        android:text="Synopsys"
         android:textSize="40sp"
+        android:textStyle="bold"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content"/>
 
     <TextView
         android:id="@+id/movie_overview"

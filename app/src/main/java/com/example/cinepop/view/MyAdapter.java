@@ -77,6 +77,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                 String strOverview = selectedMovie.getOverview();
                 intent.putExtra("Overview",strOverview);
                 v.getContext().startActivity(intent);
+
             }
         });
     }
