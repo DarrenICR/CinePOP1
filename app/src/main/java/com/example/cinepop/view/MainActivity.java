@@ -1,15 +1,14 @@
-package com.example.cinepop1.view;
+package com.example.cinepop.view;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.cinepop1.Injection;
-import com.example.cinepop1.R;
-import com.example.cinepop1.controller.MainController;
-import com.example.cinepop1.model.Movie;
+import com.example.cinepop.Injection;
+import com.example.cinepop.R;
+import com.example.cinepop.controller.MainController;
+import com.example.cinepop.model.Movie;
 
 import java.util.List;
 
@@ -26,7 +25,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView = (RecyclerView) findViewById(R.id.movies_list);
+        recyclerView = findViewById(R.id.movies_list);
 
         controller = new MainController(this, Injection.getRestApi());
         controller.onCreate();

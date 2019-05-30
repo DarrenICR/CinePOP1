@@ -1,9 +1,9 @@
-package com.example.cinepop1.controller;
+package com.example.cinepop.controller;
 
-import com.example.cinepop1.TMDbApi;
-import com.example.cinepop1.model.Movie;
-import com.example.cinepop1.model.MovieResponse;
-import com.example.cinepop1.view.MainActivity;
+import com.example.cinepop.TMDbApi;
+import com.example.cinepop.model.Movie;
+import com.example.cinepop.model.MovieResponse;
+import com.example.cinepop.view.MainActivity;
 
 import java.util.List;
 
@@ -22,7 +22,9 @@ public class MainController {
     }
 
     public void onCreate() {
+
         Call<MovieResponse> call = restApiMovie.getMovies();
+
         call.enqueue(new Callback<MovieResponse>() {
             @Override
             public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {

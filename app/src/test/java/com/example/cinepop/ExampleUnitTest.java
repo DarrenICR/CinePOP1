@@ -1,4 +1,4 @@
-package com.example.cinepop1;
+package com.example.cinepop;
 
 import org.junit.Test;
 

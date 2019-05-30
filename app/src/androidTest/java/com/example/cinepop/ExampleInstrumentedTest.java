@@ -1,4 +1,4 @@
-package com.example.cinepop1;
+package com.example.cinepop;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

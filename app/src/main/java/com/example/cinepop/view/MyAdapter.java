@@ -1,6 +1,7 @@
-package com.example.cinepop1.view;
+package com.example.cinepop.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
-import com.example.cinepop1.R;
-import com.example.cinepop1.model.Movie;
+import com.example.cinepop.R;
+import com.example.cinepop.model.Movie;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -27,9 +28,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         public ImageView poster;
         public View layout;
         public Toolbar toolbar;
-
+        public TextView overview;
 
         public ViewHolder(View v) {
+
             super(v);
             layout = v;
             title = v.findViewById(R.id.movie_title);
@@ -37,17 +39,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             rating = v.findViewById(R.id.movie_rating);
             poster = v.findViewById(R.id.movie_poster);
             toolbar = v.findViewById(R.id.toolbar);
+            overview = v.findViewById(R.id.movie_overview);
         }
-    }
-
-    public void add(int position, Movie item) {
-        values.add(position, item);
-        notifyItemInserted(position);
-    }
-
-    public void remove(int position) {
-        values.remove(position);
-        notifyItemRemoved(position);
     }
 
     public MyAdapter(List<Movie> values) {
@@ -59,13 +52,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View v = inflater.inflate(R.layout.movie_layout, parent, false);
-
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
 
         final Movie selectedMovie = values.get(position);
         holder.title.setText(selectedMovie.getTitle());
@@ -76,11 +68,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         Picasso.with(context)
                 .load("http://image.tmdb.org/t/p/w500" + selectedMovie.getPosterPath())
                 .into(holder.poster);
+
+        holder.poster.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(v.getContext(), ClickActivity.class);
+                String strOverview = selectedMovie.getOverview();
+                intent.putExtra("Overview",strOverview);
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
-    public int getItemCount() {
-        return values.size();
-    }
-
+    public int getItemCount() { return values.size(); }
 }

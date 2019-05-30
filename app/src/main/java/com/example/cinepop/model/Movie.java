@@ -1,4 +1,4 @@
-package com.example.cinepop1.model;
+package com.example.cinepop.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -21,33 +21,31 @@ public class Movie {
     @Expose
     private String releaseDate;
 
+    @SerializedName("overview")
+    @Expose
+    private String overview;
+
     @SerializedName("vote_average")
     @Expose
     private float rating;
-
-    public int getId() {
-        return id;
-    }
-
 
     public String getTitle() {
         return title;
     }
 
-
     public String getPosterPath() {
         return posterPath;
     }
-
 
     public String getReleaseDate() {
         return releaseDate;
     }
 
-
     public float getRating() {
         return rating;
     }
 
-
+    public String getOverview() {
+        return overview;
+    }
 }
