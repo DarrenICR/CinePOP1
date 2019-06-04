@@ -3,6 +3,8 @@ package com.example.cinepop.view;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -66,7 +68,20 @@ public class MainActivity extends Activity {
         return appContext;
     }
 
-    public void SetCache(List<Movie> movieList) {
+    public boolean isConnectionAvailable() {
+
+        ConnectivityManager connectivityManager = (ConnectivityManager) this
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivityManager != null) {
+            NetworkInfo netInfo = connectivityManager.getActiveNetworkInfo();
+            if (netInfo != null && netInfo.isConnected()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void SetStock(List<Movie> movieList) {
 
         Gson gson = new Gson();
         String json = gson.toJson(movieList);
@@ -79,7 +94,7 @@ public class MainActivity extends Activity {
                 .apply();
     }
 
-    public List<Movie> GetCache() {
+    public List<Movie> GetStock() {
 
         sharedPreferences = getPreferences(MODE_PRIVATE);
 

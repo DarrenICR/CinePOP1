@@ -10,8 +10,8 @@ public class Injection {
     private static TMDbApi restApiMovie;
 
     //Singleton
-    public static TMDbApi getRestApi(){
-        if(restApiMovie == null){
+    public static TMDbApi getRestApi() {
+        if (restApiMovie == null) {
             Gson gson = new GsonBuilder()
                     .setLenient()
                     .create();

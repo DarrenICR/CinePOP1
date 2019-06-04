@@ -1,8 +1,5 @@
 package com.example.cinepop.controller;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.widget.Toast;
 
 import com.example.cinepop.TMDbApi;
@@ -28,23 +25,9 @@ public class MainController {
         this.restApiMovie = restApiMovie;
     }
 
-
-    public static boolean isConnectionAvailable(Context context) {
-
-        ConnectivityManager connectivityManager = (ConnectivityManager) context
-                .getSystemService(Context.CONNECTIVITY_SERVICE);
-        if (connectivityManager != null) {
-            NetworkInfo netInfo = connectivityManager.getActiveNetworkInfo();
-            if (netInfo != null && netInfo.isConnected()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public void onCreate() {
 
-        if (MainController.isConnectionAvailable(MainActivity.getAppContext())) {
+        if (view.isConnectionAvailable()) {
 
             Call<MovieResponse> call = restApiMovie.getMovies();
 
@@ -55,7 +38,7 @@ public class MainController {
                     List<Movie> movieList = restMovieResponse.getResults();
                     view.showList(movieList);
 
-                    view.SetCache(movieList);
+                    view.SetStock(movieList);
                 }
 
                 @Override
@@ -65,10 +48,10 @@ public class MainController {
         }
         else {
 
-            List<Movie> movieList = view.GetCache();
+            List<Movie> movieList = view.GetStock();
             view.showList(movieList);
 
-            Toast.makeText(MainActivity.getAppContext(), "Aucune connexion internet disponible", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.getAppContext(), "Aucune connexion internet disponible. Chargement des données récentes.", Toast.LENGTH_SHORT).show();
         }
     }
 }
