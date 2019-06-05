@@ -44,5 +44,5 @@ https://developers.themoviedb.org/3
 
 ## Affichage de la liste
 
-![alt text](https://user-images.githubusercontent.com/49784324/58960165-ddfa4c80-87a6-11e9-9349-1a82c7a75d3d.jpg)
+![alt text](https://user-images.githubusercontent.com/49784324/58961492-87dad880-87a9-11e9-9239-030b613694f7.jpg)
 
