@@ -44,5 +44,11 @@ https://developers.themoviedb.org/3
 
 ## Affichage de la liste
 
+Affichage de la liste des films populaires du moment. MAJ de la list à chaque ouverture de l'application
+
+Design du logo qui communique parfaitement avec l’essence même de l'application... 
+
+..."Une invitation au cinéma"
+
 ![alt text](https://user-images.githubusercontent.com/49784324/58961492-87dad880-87a9-11e9-9239-030b613694f7.jpg)
 
