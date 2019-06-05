@@ -44,4 +44,5 @@ https://developers.themoviedb.org/3
 
 ## Affichage de la liste
 
-https://github.com/DarrenICR/pics_application/issues/1#issue-452503485
+![alt text](https://user-images.githubusercontent.com/49784324/58960165-ddfa4c80-87a6-11e9-9349-1a82c7a75d3d.jpg)
+
