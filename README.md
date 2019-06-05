@@ -42,8 +42,4 @@ https://developers.themoviedb.org/3
 
 # Fonctionnalités:
 
-- Clean Architecture (MVC)
-
-- Gitflow (2 branches min)
-
-
+> Pardon my French
