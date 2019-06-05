@@ -42,4 +42,4 @@ https://developers.themoviedb.org/3
 
 # Fonctionnalités:
 
-> Pardon my French
+## Affichage de la liste
