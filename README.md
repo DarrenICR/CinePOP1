@@ -44,7 +44,7 @@ https://developers.themoviedb.org/3
 
 ## Écran de la liste de films
 
-- Affichage de la liste des films populaires du moment. 
+- Affichage de la liste des films populaires du moment (affiche, titre, date de sortie, note). 
 
 - MAJ de la list à chaque ouverture de l'application.
 
