@@ -42,7 +42,7 @@ https://developers.themoviedb.org/3
 
 # Fonctionnalités:
 
-## Ecran de la liste de films
+## Écran de la liste de films
 
 - Affichage de la liste des films populaires du moment. 
 
@@ -54,7 +54,7 @@ Design du logo qui communique parfaitement avec l’essence même de l'applicati
 
 ![alt text](https://user-images.githubusercontent.com/49784324/58961492-87dad880-87a9-11e9-9239-030b613694f7.jpg)
 
-## Ecran du détail d'un film
+## Écran du détail d'un film
 
 - Affichage du résumé du film. 
 
